@@ -2,5 +2,6 @@
 
 resource "aws_iam_user" "delivery-introductions-bot" {
   name = "delivery-introductions-bot"
+  path = "/services/"
 }
 
