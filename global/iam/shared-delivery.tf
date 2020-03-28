@@ -35,7 +35,7 @@ resource "aws_iam_group_membership" "delivery" {
 resource "aws_iam_policy_attachment" "delivery" {
   name = "delivery-membership"
   roles = [
-    aws_iam_role.delivery-introductions-bot.arn
+    aws_iam_role.delivery-introductions-bot.name
   ]
   policy_arn = "arn:aws:iam::aws:policy/AdministratorAccess"
 }
