@@ -12,8 +12,3 @@ resource "aws_iam_role" "delivery-introductions-bot" {
   path = "/services/"
   assume_role_policy = file("${path.module}/templates/assume_role_policy/codebuild.json")
 }
-
-resource "aws_iam_policy_attachment" "delivery-introductions-bot-Admin" {
-  name = "Admin"
-  policy_arn = "arn:aws:iam::aws:policy/AdministratorAccess"
-}
