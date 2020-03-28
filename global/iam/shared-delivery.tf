@@ -29,5 +29,5 @@ resource "aws_iam_group_membership" "delivery" {
     aws_iam_user.delivery-introductions-bot.name,
   ]
 
-  group = "${aws_iam_group.delivery.name}"
+  group = aws_iam_group.delivery.name
 }
