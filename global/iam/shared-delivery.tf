@@ -17,7 +17,7 @@ resource "aws_iam_group" "delivery" {
 }
 
 resource "aws_iam_group_policy_attachment" "delivery-Admin" {
-  group      = "${aws_iam_group.delivery.name}"
+  group      = aws_iam_group.delivery.name
   policy_arn = "arn:aws:iam::aws:policy/AdministratorAccess"
 }
 
@@ -25,7 +25,7 @@ resource "aws_iam_group_membership" "delivery" {
   name = "delivery-membership"
 
   users = [
-    "${aws_iam_user.delivery-devops.name}",
+    aws_iam_user.delivery-devops.name,
   ]
 
   group = "${aws_iam_group.delivery.name}"
