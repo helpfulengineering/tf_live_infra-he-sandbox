@@ -15,5 +15,5 @@ resource "aws_iam_role" "monitoring-O2" {
 
 resource "aws_iam_role_policy_attachment" "monitoring-O2" {
   role =  aws_iam_role.monitoring-O2.name
-  policy_arn = "arn:aws:iam::aws:policy/PowerUser"
+  policy_arn = "arn:aws:iam::aws:policy/PowerUserAccess"
 }
