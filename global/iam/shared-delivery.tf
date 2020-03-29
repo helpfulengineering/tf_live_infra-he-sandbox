@@ -27,15 +27,8 @@ resource "aws_iam_group_membership" "delivery" {
   users = [
     aws_iam_user.delivery-devops.name,
     aws_iam_user.delivery-introductions-bot.name,
+    aws_iam_user.delivery-monitoring-O2.name,
   ]
 
   group = aws_iam_group.delivery.name
-}
-
-resource "aws_iam_policy_attachment" "delivery" {
-  name = "delivery-membership"
-  roles = [
-    aws_iam_role.delivery-introductions-bot.name
-  ]
-  policy_arn = "arn:aws:iam::aws:policy/AdministratorAccess"
 }
